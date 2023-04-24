@@ -5,7 +5,8 @@ import {
   GatewayIntentBits,
   InteractionType,
   MessageFlags,
-  Client, API
+  Client,
+  API
 } from '@discordjs/core';
 
 const token = '';
@@ -35,9 +36,10 @@ client.on(
     ) {
       return;
     }
+    const channel = await api.channels.get('');
     const guild = await api.guilds.get('755114561555791984');
-    const user = await api.users.get('419135385730416640')
-    console.log(user.avatar)
+    const user = await api.users.get('419135385730416640');
+    console.log(user.avatar);
     await api.interactions.reply(interaction.id, interaction.token, {
       content: 'Ponddg!',
       flags: MessageFlags.Ephemeral
